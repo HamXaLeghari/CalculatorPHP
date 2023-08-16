@@ -8,8 +8,14 @@
 
 result: <input type="text" disabled value="<?php
 
-if (isset($_POST["cal"]) && $_POST["cal"] !=""  && isset($_POST["n1"]) && $_POST["n1"] !="" && is_numeric($_POST["n1"]) && isset($_POST["n2"]) && $_POST["n2"] !="" && is_numeric($_POST["n2"])){
-
+if (isset($_POST["cal"])
+    && $_POST["cal"] !=""
+    && isset($_POST["n1"])
+    && $_POST["n1"] !=""
+    && is_numeric($_POST["n1"])
+    && isset($_POST["n2"])
+    && $_POST["n2"] !=""
+    && is_numeric($_POST["n2"])){
 
     include("./Calculator.php");
     $calulator = new Calculator();
@@ -23,7 +29,7 @@ if (isset($_POST["cal"]) && $_POST["cal"] !=""  && isset($_POST["n1"]) && $_POST
         echo $calulator->subtract($_POST["n1"],$_POST["n2"]);
     }
 
-    if ($_POST["cal"] === "*"){
+    if ($_POST["cal"] === "x"){
 
         echo $calulator->multiply($_POST["n1"],$_POST["n2"]);
     }
